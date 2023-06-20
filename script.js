@@ -1,10 +1,24 @@
 
-console.log(React)
- console.log(ReactDOM)
+// console.log(React)
+//  console.log(ReactDOM)
 
 //creating Reactdom element
-const Reactelement = React.createElement('h1',{}, 'Hello world');
+// const Reactelement = React.createElement('h1',{}, 'Hello world');
 //{}=>this indicates properties of the element 
+
+//adding property 
+const Reactelement = React.createElement('h1', {
+    className: "title",
+    onClick: () => console.log("clicked")
+}, 'Hello world',
+    React.createElement('ul', {},
+        React.createElement('li', {}, "One"), //content
+        React.createElement('li', {}, "Two"),//content
+        React.createElement('li', {}, "Three"),//content
+    )
+)
+
+
 
 const nativeElement = document.createElement('h1');
 nativeElement.innerHTML = "helllo shwet";
@@ -18,3 +32,4 @@ nativeElement.innerHTML = "helllo shwet";
 //now adding the ReactElement on the Dom
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(Reactelement)
+//Root can have only one child in react
