@@ -7,10 +7,8 @@
 //{}=>this indicates properties of the element 
 
 //adding property 
-const Reactelement = React.createElement('h1', {
-    className: "title",
-    onClick: () => console.log("clicked")
-}, 'Hello world',
+const Reactelement = React.createElement('div', {},
+    React.createElement('h1', {}, 'Hello World!'),
     React.createElement('ul', {},
         React.createElement('li', {}, "One"), //content
         React.createElement('li', {}, "Two"),//content
